@@ -19,6 +19,7 @@ TOP="$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")"
 source "$TOP/lib/common.sh"
 
 logmust check_running_system
+logmust sudo sh -c "echo 'deb http://archive.ubuntu.com/ubuntu/ bionic-proposed restricted main multiverse universe' >> /etc/apt/sources.list.d/proposed-repositories.list"
 logmust sudo apt-get update
 
 #
